@@ -1,22 +1,32 @@
 #include <stdio.h>
+
 int main() {
-   char r[50], rec[50];
-   int st = 1, end, max = 0, cnt = 0;
+
+   char niz[51];
    printf("Niz > ");
-   fgets(r, 50, stdin);
-   for (int i = 1; i < 50; i++) {
-      if ((r[i] != ' '))
-         st = i;
-      if (r[i] == ' ' || r[i + 1] == "\n" || r[i + 1] == '\t') {
-         end = i;
-         cnt++;
-         if ((end - st + 1) > max)
-            max = end - st + 1;
+   fgets(niz, 51, stdin);
+
+   int rpoc, maxpoc, max_r = 0, i = 0, br = 0;
+
+   while (niz[i] != '\n') {
+      rpoc = i;
+
+      while (niz[i] != '.' && niz[i] != ' ')
+         i++;
+      br++;
+
+      if (i - rpoc > max_r) {
+         max_r = i - rpoc;
+         maxpoc = rpoc;
       }
+      i++;
    }
-   printf("Broj rijeci: %d\n", cnt);
-   for (int i = st; i < end + 1; i++)
-      printf("%c", r[i]);
-   getch();
+
+   printf("Broj rijeci: %d\n", br);
+
+   printf("Najdulja rijec: ");
+   for (int i = maxpoc; i < maxpoc + max_r; i++)
+      printf("%c", niz[i]);
+
    return 0;
 }
