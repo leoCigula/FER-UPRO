@@ -1,3 +1,7 @@
+/*
+Koliko parova ima u reda kojima je razlika jednaka upisanom broj , par je i+1 - i
+*/
+
 #include <stdio.h>
 int main() {
    int m, n;
