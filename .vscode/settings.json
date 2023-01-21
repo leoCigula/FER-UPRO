@@ -8,6 +8,7 @@
    "files.associations": {
       "TEST.C": "cpp",
       "stdio.h": "c",
-      "ZAD1.C": "cpp"
+      "ZAD1.C": "cpp",
+      "Predavanje27_3.C": "cpp"
    }
 }
